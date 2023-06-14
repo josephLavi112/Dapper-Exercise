@@ -27,3 +27,17 @@ foreach(var department in departments)
 {
     Console.WriteLine($"{department.Name} | {department.DepartmentID}");
 }
+
+var repo2 = new DapperProductRepo(conn);
+
+Console.WriteLine("Type a new product name: ");
+
+var newProduct = Console.ReadLine();
+
+
+var products = repo2.GetAllProducts();
+
+foreach (var product in products)
+{
+    Console.WriteLine($"{product.Name} | {product.ProductID}");
+}
